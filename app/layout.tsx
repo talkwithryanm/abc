@@ -24,6 +24,38 @@ export const metadata: Metadata = {
   description:
     "End your divorce in one calm, private 3-hour Zoom session. $795 each. No lawyers, no court. Most MN couples finish in one session with peace.",
   generator: "v0.app",
+  metadataBase: new URL("https://flannelpeoplemediation.com"),
+  openGraph: {
+    title: "Flannel People Mediation - End Your Divorce in One 3-Hour Session",
+    description:
+      "No lawyers. No court battle. From home. Most couples finish in one session. $795 flat fee virtual divorce mediation for MN couples.",
+    url: "https://flannelpeoplemediation.com",
+    siteName: "Flannel People Mediation",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Flannel People Mediation - Virtual Divorce Mediation",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Flannel People Mediation - End Your Divorce in One 3-Hour Session",
+    description:
+      "No lawyers. No court battle. From home. Most couples finish in one session. $795 flat fee virtual divorce mediation for MN couples.",
+    images: ["/opengraph-image.png"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [{ url: "/apple-touch-icon.jpg", sizes: "180x180", type: "image/png" }],
+  },
 }
 
 export default function RootLayout({
