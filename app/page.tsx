@@ -151,7 +151,10 @@ export default function Home() {
           <div className="mt-12 md:mt-16 max-w-4xl mx-auto">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/60 backdrop-blur-sm hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">
               <video autoPlay muted loop playsInline className="w-full h-auto md:max-h-[450px] md:object-cover">
-                <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero111-bxIFGnnTCKDswFTthgOf7dKKm1dWs9.MP4" type="video/mp4" />
+                <source
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/trim%20hero-IZcDvqznnysk63AdKZK7TBDLTxMZo9.mp4"
+                  type="video/mp4"
+                />
               </video>
             </div>
           </div>
