@@ -515,7 +515,7 @@ export default function Home() {
               Ready When You Are
             </h2>
             <p className="font-serif text-xl md:text-2xl lg:text-3xl text-[#02504F]/75 mb-8 md:mb-12 leading-relaxed">
-              I'm here every week — evenings and weekends included.
+              Book your session during the week, evenings or weekends.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
               <Button
