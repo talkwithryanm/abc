@@ -5,7 +5,6 @@ import confetti from "canvas-confetti"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import Image from "next/image"
-import Script from "next/script"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export default function Home() {
@@ -473,7 +472,14 @@ export default function Home() {
             className="mb-12 md:mb-16 max-w-5xl mx-auto text-center flex justify-center cursor-pointer transition-all duration-300 hover:scale-105"
             onMouseEnter={handleReviewsConfetti}
           >
-            <div id="featurable-1dee51b5-4582-4e4e-820e-5555f4091582" data-featurable-async></div>
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/240%205%20star-tBUOpEoa3DH8jLPSHlktxCYdDuI9Km.png"
+              alt="240+ 5-Star Google Reviews - 4.9 Rating"
+              width={1200}
+              height={1200}
+              className="w-full max-w-2xl h-auto rounded-3xl shadow-2xl"
+              priority
+            />
           </div>
 
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-[#02504F] uppercase tracking-tighter text-center mb-12 md:mb-20 leading-tight">
@@ -565,8 +571,6 @@ export default function Home() {
           </p>
         </div>
       </footer>
-
-      <Script src="https://featurable.com/assets/bundle.js" strategy="lazyOnload" />
     </div>
   )
 }
