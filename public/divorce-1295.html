@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO / Quality Score — keyword: "divorce mediation" -->
+  <title>Divorce Mediation – $1,295 Flat Fee | Flannel People Mediation</title>
+  <meta name="description" content="Divorce mediation without the hourly legal fight. $1,295/person flat fee. 100% remote. 4.9 stars, 271 reviews. Book a free 15-min consult today." />
+  <meta name="robots" content="noindex" /><!-- landing page — keep out of organic index -->
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Divorce Mediation – $1,295 Flat Fee | Flannel People Mediation" />
+  <meta property="og:description" content="Divorce mediation without the hourly legal fight. Flat fee. 100% remote. Free consult." />
+  <meta property="og:url" content="https://flannelpeoplemediation.com/divorce-mediation-1295" />
+  <meta property="og:type" content="website" />
+
+  <!-- Preconnect for fonts (non-render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://assets.calendly.com" />
+
+  <!-- Fonts: non-render-blocking async load -->
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Lato:wght@400;700&display=swap" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet" /></noscript>
+
+  <!-- Calendly popup widget (async — does NOT block render) -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <!-- Google Analytics 4 + Google Ads — real IDs from live site -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-21PDQ6WLGJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-21PDQ6WLGJ');   // GA4
+    gtag('config', 'AW-16625605278'); // Google Ads base tag
+
+    // ── Conversion tracking ──────────────────────────────────────────
+    // Replace CONVERSION_LABEL_HERE with the label from:
+    // Google Ads → Goals → Conversions → your action → Tag details
+    var CONVERSION_LABEL = 'yzYeCMnUgLocEJ612vc9';
+
+    // ── gclid capture ────────────────────────────────────────────────────
+    // Grab gclid from URL (Google auto-appends it on ad clicks) and store
+    // it for the session so it survives Calendly's iframe navigation.
+    (function() {
+      var p = new URLSearchParams(window.location.search);
+      var gclid = p.get('gclid') || sessionStorage.getItem('flannel_gclid');
+      if (gclid) {
+        sessionStorage.setItem('flannel_gclid', gclid);
+        window._flannelGclid = gclid;
+        // Inject into inline widget data-url before Calendly.js initialises it.
+        // (This script runs sync; the Calendly widget.js is async — so this
+        //  always wins the race.)
+        document.addEventListener('DOMContentLoaded', function() {
+          var w = document.querySelector('.calendly-inline-widget');
+          if (w) {
+            var base = w.getAttribute('data-url') || '';
+            if (!base.includes('utm_content=gclid')) {
+              w.setAttribute('data-url',
+                base + (base.includes('?') ? '&' : '?') +
+                'utm_content=gclid_' + encodeURIComponent(gclid));
+            }
+          }
+        });
+      }
+    })();
+
+    // Primary trigger: Calendly postMessage on confirmed booking
+    // This fires regardless of redirect URL config — most reliable method
+    window.addEventListener('message', function(e) {
+      if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+        var gclid = window._flannelGclid || sessionStorage.getItem('flannel_gclid') || '';
+        gtag('event', 'conversion', {
+          'send_to': 'AW-16625605278/' + CONVERSION_LABEL,
+          'transaction_id': gclid   // ties conversion back to exact click
+        });
+        gtag('event', 'book_consult', {  // GA4 custom event
+          'event_category': 'conversion',
+          'event_label': 'calendly_inline',
+          'gclid': gclid
+        });
+        // Show custom on-page confirmation
+        showBookingConfirmed();
+      }
+    });
+
+    // Secondary trigger: URL param fallback (?booked=calendly)
+    // Matches your existing site's tracking pattern — catches any
+    // bookings that go through the redirect flow instead
+    if (window.location.search.includes('booked=calendly')) {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-16625605278/' + CONVERSION_LABEL
+      });
+      document.addEventListener('DOMContentLoaded', showBookingConfirmed);
+    }
+
+    function showBookingConfirmed() {
+      var widget = document.getElementById('calendly-section');
+      var confirm = document.getElementById('booking-confirmed');
+      if (!confirm) return;
+      if (widget) widget.style.display = 'none';
+      confirm.style.display = 'block';
+      confirm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Open Calendly popup — user stays on page
+    function openConsult() {
+      // Track CTA click in GA4 (not the conversion — just intent)
+      gtag('event', 'consult_click', {
+        'event_category': 'engagement',
+        'event_label': 'book_cta'
+      });
+      var baseUrl = 'https://calendly.com/flannelpeoplemediation/free15consult';
+      var gclid = window._flannelGclid || sessionStorage.getItem('flannel_gclid');
+      if (gclid) {
+        baseUrl += (baseUrl.includes('?') ? '&' : '?') +
+                   'utm_content=gclid_' + encodeURIComponent(gclid);
+      }
+      if (typeof Calendly !== 'undefined') {
+        Calendly.initPopupWidget({ url: baseUrl });
+      } else {
+        // Fallback: direct link with booked param so URL-based tracking works
+        window.location.href = baseUrl;
+      }
+      return false;
+    }
+  </script>
+
+  <!-- Microsoft Clarity — heatmaps + session recordings (lazyOnload) -->
+  <script>
+    window.addEventListener('load', function() {
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "wyrol7p84y");
+    });
+  </script>
+
+  <!-- Schema: LocalBusiness + Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Flannel People Mediation",
+    "description": "Professional divorce mediation services. Flat fee $1,295 per person. 100% remote.",
+    "url": "https://flannelpeoplemediation.com",
+    "telephone": "+17633168323",
+    "priceRange": "$1,295",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "St. Paul",
+      "addressRegion": "MN",
+      "addressCountry": "US"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "271"
+    },
+    "areaServed": "United States",
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceType": "Remote / Video",
+      "availableLanguage": "English"
+    }
+  }
+  </script>
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Lato', system-ui, sans-serif;
+      background: #FAFAF7;
+      color: #1E293B;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; border: none; }
+
+    /* ── Color tokens ── */
+    :root {
+      --sage-50:  #f3f7f4;
+      --sage-100: #e4ede6;
+      --sage-200: #c8dace;
+      --sage-300: #9dbfa7;
+      --sage-400: #6d9e7b;
+      --sage-500: #4a7f5c;
+      --sage-600: #386548;
+      --sage-700: #2d503a;
+      --sage-800: #254030;
+      --cream:    #FAFAF7;
+      --white:    #ffffff;
+      --amber:    #D97706;
+      --amber-dark: #B45309;
+      --text:     #1E293B;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --border:   #e2e8f0;
+      --red:      #EF4444;
+    }
+
+    /* ── Typography ── */
+    h1, h2, h3, .serif {
+      font-family: 'EB Garamond', Georgia, serif;
+      line-height: 1.15;
+      color: var(--text);
+    }
+
+    /* ── Utilities ── */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; }
+    .container--narrow { max-width: 680px; margin: 0 auto; padding: 0 1.25rem; }
+    .text-center { text-align: center; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: .5rem; font-weight: 700; border-radius: .75rem;
+      transition: background .15s, box-shadow .15s, transform .1s;
+      cursor: pointer; text-decoration: none; white-space: nowrap;
+    }
+    .btn:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+    .btn--primary {
+      background: var(--amber); color: #fff;
+      padding: 1rem 2rem; font-size: 1.1rem;
+      box-shadow: 0 4px 14px rgba(217,119,6,.3);
+    }
+    .btn--primary:hover { background: var(--amber-dark); box-shadow: 0 6px 20px rgba(217,119,6,.4); transform: translateY(-1px); }
+    .btn--outline {
+      background: transparent; color: var(--sage-700);
+      border: 2px solid var(--sage-300);
+      padding: .9rem 1.75rem; font-size: 1rem;
+    }
+    .btn--outline:hover { background: var(--sage-50); }
+    .btn--white {
+      background: var(--white); color: var(--sage-700);
+      padding: 1rem 2.5rem; font-size: 1.1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,.12);
+    }
+    .btn--white:hover { background: var(--sage-50); }
+    .btn--full { width: 100%; }
+
+    /* ── Stars ── */
+    .stars { color: #F59E0B; letter-spacing: .05em; }
+
+    /* ── Sticky Top Bar ── */
+    .top-bar {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--sage-100);
+      box-shadow: 0 1px 8px rgba(0,0,0,.06);
+    }
+    .top-bar__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .75rem 1.25rem; max-width: 960px; margin: 0 auto;
+    }
+    .top-bar__brand {
+      font-family: 'EB Garamond', serif; font-size: 1.15rem;
+      font-weight: 600; color: var(--sage-700);
+    }
+    .top-bar__phone {
+      display: flex; align-items: center; gap: .4rem;
+      font-weight: 700; font-size: .9rem; color: var(--sage-700);
+    }
+    .top-bar__phone:hover { color: var(--sage-500); }
+    @media (max-width: 480px) { .top-bar__brand { display: none; } }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--cream);
+      padding: 4rem 1.25rem 4.5rem;
+      text-align: center;
+    }
+    .hero__badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--white); border: 1px solid var(--sage-200);
+      border-radius: 9999px; padding: .4rem 1rem;
+      font-size: .9rem; color: var(--sage-700);
+      margin-bottom: 1.75rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+      flex-wrap: nowrap; white-space: nowrap;
+    }
+    @media (max-width: 420px) { .hero__badge { font-size: .78rem; padding: .35rem .8rem; gap: .35rem; } }
+    .hero__headline {
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      font-weight: 700; margin-bottom: 1.25rem;
+      max-width: 700px; margin-inline: auto;
+    }
+    .hero__headline em { font-style: italic; font-weight: 400; }
+    .hero__sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--text-muted); max-width: 560px;
+      margin: 0 auto 2rem; line-height: 1.7;
+    }
+    .hero__sub strong { color: var(--text); }
+    .hero__ctas {
+      display: flex; flex-wrap: wrap; gap: .75rem;
+      justify-content: center; margin-bottom: 1rem;
+    }
+    .hero__fine {
+      font-size: .85rem; color: var(--text-light); margin-top: .75rem;
+    }
+
+    /* ── Proof Bar ── */
+    .proof-bar {
+      background: var(--sage-600); color: var(--white);
+      padding: 1.75rem 1.25rem;
+    }
+    .proof-bar__grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem; max-width: 800px; margin: 0 auto;
+      text-align: center;
+    }
+    @media (min-width: 600px) { .proof-bar__grid { grid-template-columns: repeat(4, 1fr); } }
+    .proof-bar__num {
+      font-family: 'EB Garamond', serif;
+      font-size: 2rem; font-weight: 600; display: block;
+    }
+    .proof-bar__label { font-size: .8rem; color: rgba(255,255,255,.7); margin-top: .25rem; }
+
+    /* ── Section base ── */
+    .section { padding: 4rem 1.25rem; }
+    .section--white { background: var(--white); }
+    .section--cream { background: var(--cream); }
+    .section--dark { background: var(--sage-600); color: var(--white); }
+    .section__heading {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 600; margin-bottom: 1rem;
+    }
+    .section__sub { color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1rem; }
+
+    /* ── Pain section ── */
+    .pain__body { font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; max-width: 560px; margin: 0 auto; }
+
+    /* ── What's included cards ── */
+    .cards { display: grid; gap: 1rem; }
+    @media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
+    .card {
+      background: var(--white); border: 1px solid var(--sage-100);
+      border-radius: 1rem; padding: 1.5rem;
+      display: flex; gap: 1rem;
+      box-shadow: 0 1px 6px rgba(0,0,0,.04);
+    }
+    .card__icon {
+      width: 2.5rem; height: 2.5rem; flex-shrink: 0;
+      background: var(--sage-100); border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .card__icon svg { width: 1.1rem; height: 1.1rem; color: var(--sage-600); stroke: var(--sage-600); }
+    .card__title { font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: .35rem; }
+    .card__body { font-size: .9rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── Pricing comparison ── */
+    .compare { display: grid; gap: 1.25rem; }
+    @media (min-width: 640px) { .compare { grid-template-columns: 1fr 1fr; } }
+    .compare__box {
+      border-radius: 1rem; padding: 2rem;
+      border: 2px solid var(--border);
+      background: #f9fafb; position: relative;
+    }
+    .compare__box--featured {
+      border-color: var(--sage-400);
+      background: var(--sage-50);
+    }
+    .compare__badge {
+      position: absolute; top: -0.75rem; left: 50%; transform: translateX(-50%);
+      background: var(--sage-500); color: var(--white);
+      font-size: .7rem; font-weight: 700; letter-spacing: .08em;
+      padding: .25rem .75rem; border-radius: 9999px; white-space: nowrap;
+    }
+    .compare__title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.5rem; font-weight: 600; margin-bottom: 1.25rem;
+    }
+    .compare__title--muted { color: var(--text-muted); }
+    .compare__list { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+    .compare__item { display: flex; gap: .6rem; align-items: flex-start; font-size: .9rem; }
+    .compare__check { color: var(--sage-500); font-weight: 700; margin-top: .1rem; flex-shrink: 0; }
+    .compare__x { color: var(--red); font-weight: 700; margin-top: .1rem; flex-shrink: 0; }
+    .compare__item--muted { color: var(--text-muted); }
+
+    /* ── Testimonials ── */
+    .testimonials { display: grid; gap: 1rem; }
+    @media (min-width: 640px) { .testimonials { grid-template-columns: repeat(3, 1fr); } }
+    .testimonial {
+      background: var(--white); border: 1px solid var(--sage-100);
+      border-radius: 1rem; padding: 1.5rem;
+      box-shadow: 0 1px 6px rgba(0,0,0,.04);
+    }
+    .testimonial__stars { font-size: 1rem; margin-bottom: .75rem; }
+    .testimonial__quote {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 1rem; line-height: 1.7; color: var(--text); margin-bottom: 1rem;
+    }
+    .testimonial__author { font-size: .85rem; color: var(--text-light); font-weight: 700; }
+
+    /* ── FAQ ── */
+    .faq { display: flex; flex-direction: column; gap: .6rem; }
+    .faq__item { border: 1px solid var(--border); border-radius: .75rem; overflow: hidden; }
+    .faq__trigger {
+      width: 100%; text-align: left; background: none;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 1.25rem; font-size: .95rem; font-weight: 700;
+      color: var(--text); gap: 1rem;
+    }
+    .faq__trigger:hover { background: #f8fafc; }
+    .faq__trigger:focus-visible { outline: 2px solid var(--amber); outline-offset: -2px; }
+    .faq__chevron { flex-shrink: 0; transition: transform .25s ease; }
+    .faq__item.open .faq__chevron { transform: rotate(180deg); }
+    .faq__body { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .faq__item.open .faq__body { max-height: 400px; }
+    .faq__text { padding: 0 1.25rem 1.25rem; font-size: .9rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ── Final CTA section ── */
+    .cta-section { text-align: center; }
+    .cta-section__heading {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 600; color: var(--white); margin-bottom: 1rem;
+    }
+    .cta-section__body { color: rgba(255,255,255,.8); font-size: 1.05rem; max-width: 520px; margin: 0 auto 2rem; line-height: 1.7; }
+    .cta-section__secondary {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 1rem; margin-top: 1.5rem;
+    }
+    .cta-section__link { color: rgba(255,255,255,.7); font-size: .9rem; display: flex; align-items: center; gap: .4rem; }
+    .cta-section__link:hover { color: var(--white); }
+    .cta-section__dot { color: rgba(255,255,255,.3); }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--sage-800); color: rgba(255,255,255,.45);
+      text-align: center; padding: 1.5rem 1.25rem; font-size: .8rem;
+    }
+    .footer p + p { margin-top: .35rem; }
+
+    /* ── Mobile sticky bar (hidden on desktop) ── */
+    .mobile-bar {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 200; background: var(--white); border-top: 1px solid var(--border);
+      padding: .75rem 1rem; gap: .75rem;
+      box-shadow: 0 -4px 20px rgba(0,0,0,.1);
+    }
+    @media (max-width: 767px) { .mobile-bar { display: flex; } }
+    .mobile-bar a, .mobile-bar button {
+      flex: 1; text-align: center;
+      padding: .85rem; border-radius: .75rem; font-size: .9rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; gap: .4rem;
+    }
+    .mobile-bar__call {
+      border: 2px solid var(--sage-300); color: var(--sage-700); background: transparent;
+    }
+    .mobile-bar__book {
+      background: var(--amber); color: var(--white); border: none;
+    }
+    /* Spacer so last section isn't hidden by bar on mobile */
+    .mobile-spacer { display: none; height: 4.5rem; }
+    @media (max-width: 767px) { .mobile-spacer { display: block; } }
+
+    /* ── Entrance animation (respects prefers-reduced-motion) ── */
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-up { animation: fadeUp .5s ease both; }
+      .fade-up:nth-child(2) { animation-delay: .1s; }
+      .fade-up:nth-child(3) { animation-delay: .2s; }
+      .fade-up:nth-child(4) { animation-delay: .3s; }
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(14px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      .btn--pulse { animation: btnPulse 3s ease-in-out infinite; }
+      @keyframes btnPulse {
+        0%, 100% { box-shadow: 0 4px 14px rgba(217,119,6,.3); }
+        50%       { box-shadow: 0 4px 28px rgba(217,119,6,.6), 0 0 0 6px rgba(217,119,6,.12); }
+      }
+      /* Pause pulse on hover so it doesn't fight the hover state */
+      .btn--pulse:hover { animation: none; }
+    }
+
+    /* ── Testimonial hover lift ── */
+    .testimonial { transition: transform .2s ease, box-shadow .2s ease; }
+    .testimonial:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.09); }
+
+    /* ── Mid-page CTA strip ── */
+    .cta-strip {
+      padding: 2.5rem 1.25rem; text-align: center;
+      background: var(--sage-50); border-top: 1px solid var(--sage-100); border-bottom: 1px solid var(--sage-100);
+    }
+    .cta-strip__fine { font-size: .82rem; color: var(--text-light); margin-top: .6rem; }
+
+    /* ── Google review card style ── */
+    .testimonial__meta { display: flex; align-items: flex-start; gap: .85rem; margin-bottom: .85rem; }
+    .testimonial__avatar {
+      width: 2.75rem; height: 2.75rem; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Lato', sans-serif; font-weight: 700; font-size: 1.1rem; color: #fff;
+    }
+    .testimonial__name { font-family: 'Lato', sans-serif; font-size: .9rem; font-weight: 700; color: var(--text); }
+    .testimonial__verified { display: flex; align-items: center; gap: .3rem; font-size: .75rem; color: var(--text-light); margin-top: .2rem; }
+    .testimonial__footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1rem; padding-top: .75rem; border-top: 1px solid var(--sage-100); }
+    .testimonial__posted { font-size: .75rem; color: var(--text-light); }
+
+    /* ── Process steps ── */
+    .process { list-style: none; display: flex; flex-direction: column; gap: 2rem; }
+    .process__step { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .process__num {
+      background: var(--sage-500); color: #fff;
+      font-family: 'Lato', sans-serif; font-weight: 700; font-size: .95rem;
+      width: 2rem; height: 2rem; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: .2rem;
+    }
+    .process__title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.2rem; font-weight: 600; margin-bottom: .4rem;
+    }
+    .process__body { font-size: .95rem; color: var(--text-muted); line-height: 1.75; }
+
+    /* ── SVG icon helper ── */
+    .icon { display: inline-block; vertical-align: middle; flex-shrink: 0; }
+
+    /* ══════════════════════════════════════════
+       VSL — Meet Ryan video section
+       Portrait 9:16, lazy-load, zero page-speed cost
+    ══════════════════════════════════════════ */
+    .vsl-section {
+      background: var(--white);
+      padding: 4rem 1.25rem 4.5rem;
+      text-align: center;
+    }
+    .vsl-eyebrow {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+      letter-spacing: .02em;
+    }
+    .vsl-stage {
+      position: relative;
+      display: inline-block;
+      max-width: 340px;
+      width: 100%;
+    }
+    /* Ambient sage glow — pure CSS, zero weight */
+    .vsl-stage::before {
+      content: '';
+      position: absolute;
+      inset: -40px;
+      background: radial-gradient(ellipse at 50% 55%,
+        rgba(56,101,72,.10) 0%,
+        rgba(74,127,92,.06) 40%,
+        transparent 70%);
+      z-index: 0;
+      pointer-events: none;
+      border-radius: 60px;
+    }
+    .vsl-frame {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow:
+        0 2px 4px rgba(30,41,59,.04),
+        0 8px 24px rgba(30,41,59,.08),
+        0 32px 72px rgba(30,41,59,.13);
+      cursor: pointer;
+      z-index: 1;
+      background: #111;
+      aspect-ratio: 9 / 16;
+      width: 100%;
+    }
+    .vsl-frame img,
+    .vsl-frame video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity .4s ease;
+    }
+    .vsl-frame video { opacity: 0; }
+    /* Below-frame meta */
+    .vsl-meta {
+      margin-top: 1rem;
+      font-size: .78rem;
+      color: var(--text-light);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    /* has-frame: video fades in, poster fades out */
+    .vsl-frame.has-frame video { opacity: 1; }
+    .vsl-frame.has-frame img  { opacity: 0; }
+    /* Play/pause overlay — visible during playback */
+    .vsl-control {
+      position: absolute;
+      bottom: 18px; right: 18px;
+      width: 48px; height: 48px;
+      background: rgba(0,0,0,.5);
+      border: 2px solid rgba(255,255,255,.7);
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 4;
+      cursor: pointer;
+      transition: background .2s ease, opacity .2s ease;
+    }
+    .vsl-frame.has-frame .vsl-control { display: flex; }
+    .vsl-control:hover { background: rgba(0,0,0,.75); }
+    .vsl-control svg { width: 20px; height: 20px; fill: #fff; }
+    .vsl-control .icon-pause { display: block; }
+    .vsl-control .icon-play  { display: none; margin-left: 3px; }
+    .vsl-frame.paused .vsl-control .icon-pause { display: none; }
+    .vsl-frame.paused .vsl-control .icon-play  { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════ STICKY TOP BAR ═══════════════════════ -->
+  <header class="top-bar" role="banner">
+    <div class="top-bar__inner">
+      <span class="top-bar__brand">Flannel People Mediation</span>
+      <a href="tel:7633168323" class="top-bar__phone" aria-label="Call us at 763-316-8323">
+        <svg class="icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 14.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        (763) 316-8323
+      </a>
+      <button class="btn btn--primary" onclick="openConsult()" style="padding:.6rem 1.25rem;font-size:.9rem;" aria-label="Book free consultation">
+        Book Free Consult
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section class="hero" aria-labelledby="hero-headline">
+      <div class="container--narrow">
+
+        <div class="hero__badge fade-up" aria-label="4.9 stars, 271 Google reviews">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <strong>4.9 stars</strong>
+          <span style="color:#cbd5e1">·</span>
+          <span>271 Google reviews</span>
+        </div>
+
+        <h1 id="hero-headline" class="hero__headline fade-up">
+          Divorce mediation <em>without</em> the hourly legal fight.
+        </h1>
+
+        <p class="hero__sub fade-up">
+          Work with a professional divorce mediator — parenting plans, property, finances — settled together on your terms.
+          <strong>$1,295 per person. Flat fee. 100% remote.</strong> Serving Minnesota and all states.
+        </p>
+
+        <div class="hero__ctas fade-up">
+          <button class="btn btn--primary btn--pulse" onclick="openConsult()">
+            See If Mediation Is Right for You
+            <svg class="icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </button>
+        </div>
+
+        <p class="hero__fine">Free 15-min consult &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; No credit card &nbsp;·&nbsp; Or <a href="tel:7633168323" style="color:var(--sage-600);text-decoration:underline;text-underline-offset:2px;">call (763) 316-8323</a></p>
+
+        <figure class="hero__pullquote fade-up" style="margin:1.5rem auto 0;max-width:520px;text-align:center;">
+          <blockquote style="margin:0;font-size:.95rem;color:var(--text-muted);font-style:italic;line-height:1.55;">
+            "To my surprise we finished in one session and are both feeling ready to move forward."
+          </blockquote>
+          <figcaption style="margin-top:.5rem;font-size:.8rem;color:var(--text-light);letter-spacing:.03em;">
+            — Hannah K. &nbsp;·&nbsp; &#9733;&#9733;&#9733;&#9733;&#9733; Google Review
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ PROOF BAR ═══════════════════════ -->
+    <div class="proof-bar" role="region" aria-label="Key statistics">
+      <div class="proof-bar__grid">
+        <div>
+          <span class="proof-bar__num">4.9★</span>
+          <span class="proof-bar__label">Google Rating</span>
+        </div>
+        <div>
+          <span class="proof-bar__num">271</span>
+          <span class="proof-bar__label">Client Reviews</span>
+        </div>
+        <div>
+          <span class="proof-bar__num">$1,295</span>
+          <span class="proof-bar__label">Flat Fee / Person</span>
+        </div>
+        <div>
+          <span class="proof-bar__num">100%</span>
+          <span class="proof-bar__label">Remote · MN + All States</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════ PAIN SECTION ═══════════════════════ -->
+    <section class="section section--white text-center" aria-labelledby="pain-heading">
+      <div class="container--narrow">
+        <h2 id="pain-heading" class="section__heading">
+          Divorce is already hard.<br />Your process doesn't have to be.
+        </h2>
+        <p class="pain__body">
+          Most people going through a divorce don't want a courtroom, attorneys charging by the hour, or a judge deciding what's best for their family. Mediation is how couples take control of that process themselves — together. One neutral mediator. Every issue resolved. Written down. Most couples finish in weeks, not months, at a fraction of what litigation costs.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ VSL — MEET RYAN ═══════════════════════ -->
+    <section class="vsl-section" aria-labelledby="vsl-heading" id="meet-ryan-video">
+      <div class="container--narrow">
+
+        <p class="vsl-eyebrow" id="vsl-heading">A word from your mediator</p>
+
+        <div class="vsl-stage">
+          <div class="vsl-frame" id="vsl-frame" role="button" tabindex="0" aria-label="Watch Ryan's video: Meet your mediator">
+
+            <!-- Poster: AI-generated professional shot, loads with page -->
+            <img
+              id="vsl-poster"
+              src="/ryan-vsl-poster-new.jpg"
+              alt="Ryan McLaughlin, divorce mediator"
+              loading="eager"
+              decoding="async"
+              width="540"
+              height="960"
+            />
+
+            <!-- Video: src set on first interaction only (lazy load) -->
+            <video
+              id="vsl-video"
+              playsinline
+              preload="none"
+            ></video>
+
+            <!-- Play/pause control — visible during playback -->
+            <button class="vsl-control" id="vsl-control" aria-label="Pause video">
+              <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              <svg class="icon-play"  viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+
+
+          </div><!-- /.vsl-frame -->
+
+          <p class="vsl-meta">90 seconds &nbsp;·&nbsp; Captions included</p>
+        </div><!-- /.vsl-stage -->
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ WHAT'S INCLUDED ═══════════════════════ -->
+    <section class="section section--cream" aria-labelledby="included-heading">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:2.5rem">
+          <h2 id="included-heading" class="section__heading">What divorce mediation includes</h2>
+          <p class="section__sub">Everything covered in your $1,295 flat fee — no hourly billing, no surprises.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="card__title">Prepared, structured sessions</h3>
+              <p class="card__body">Your mediator does the prep work. You show up ready to make decisions, not wade through paperwork.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+            </div>
+            <div>
+              <h3 class="card__title">Zoom sessions — anywhere</h3>
+              <p class="card__body">No commuting to an office. No scheduling around a courthouse. Meet from wherever you're comfortable.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+            </div>
+            <div>
+              <h3 class="card__title">Neutral, professional guidance</h3>
+              <p class="card__body">Ryan is trained in conflict resolution — not on your side or theirs. He keeps conversations productive.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <div>
+              <h3 class="card__title">Written record of agreements</h3>
+              <p class="card__body">Every decision gets put in writing so you leave each session with a clear record of what you agreed to.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ HOW IT WORKS ═══════════════════════ -->
+    <section class="section section--white" aria-labelledby="process-heading">
+      <div class="container--narrow">
+        <div class="text-center" style="margin-bottom:2.5rem">
+          <h2 id="process-heading" class="section__heading">Here's exactly what happens.</h2>
+          <p class="section__sub">Built from hundreds of sessions, neuroscience research, and a genuine commitment to what actually works.</p>
+        </div>
+        <ol class="process">
+
+          <li class="process__step">
+            <span class="process__num" aria-hidden="true">1</span>
+            <div>
+              <h3 class="process__title">A private call with each of you — before anything starts</h3>
+              <p class="process__body">Ryan meets with each person separately, one-on-one. He listens for what you're afraid of, what you're hoping for, what you expect to run into — and what would personally help you feel comfortable, confident, and ready. No surprises. No ambushes going in.</p>
+            </div>
+          </li>
+
+          <li class="process__step">
+            <span class="process__num" aria-hidden="true">2</span>
+            <div>
+              <h3 class="process__title">Four questions to get your mind ready</h3>
+              <p class="process__body">Before the session, both of you receive the same four questions to reflect on. Research shows this kind of priming shifts people out of fight-or-flight and into a collaborative mindset — so you arrive oriented toward agreement, not still bracing for a fight. Most mediation practices skip this entirely and throw you straight in. We don't.</p>
+            </div>
+          </li>
+
+          <li class="process__step">
+            <span class="process__num" aria-hidden="true">3</span>
+            <div>
+              <h3 class="process__title">Pre-session prep — done in advance, not during</h3>
+              <p class="process__body">You'll complete a questionnaire covering the details the session needs: assets, debts, kids' ages, income — all of it. So when you're together, you're not sorting through paperwork. You're making decisions.</p>
+            </div>
+          </li>
+
+          <li class="process__step">
+            <span class="process__num" aria-hidden="true">4</span>
+            <div>
+              <h3 class="process__title">One three-hour session — start to finish</h3>
+              <p class="process__body">Most couples reach full agreement in a single session. You come in without an agreement. You leave with every issue resolved and written down. For most people, that's the end of the process — and many describe it as something they're genuinely proud of. Not easy. But done, and done well.</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ CTA AFTER PROCESS ═══════════════════════ -->
+    <div class="cta-strip">
+      <button class="btn btn--primary btn--pulse" onclick="openConsult()">
+        See If Mediation Is Right for You
+        <svg class="icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </button>
+      <p class="cta-strip__fine">Free 15-min call &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; No credit card</p>
+    </div>
+
+    <!-- ═══════════════════════ PRICING COMPARISON ═══════════════════════ -->
+    <section class="section section--white" aria-labelledby="compare-heading">
+      <div class="container--narrow">
+        <div class="text-center" style="margin-bottom:.5rem">
+          <h2 id="compare-heading" class="section__heading">The real cost comparison</h2>
+          <p class="section__sub">Most couples don't realize how wide the gap is until they're in it.</p>
+        </div>
+        <div class="compare">
+          <div class="compare__box compare__box--featured">
+            <span class="compare__badge">RECOMMENDED</span>
+            <h3 class="compare__title">Mediation</h3>
+            <ul class="compare__list">
+              <li class="compare__item"><span class="compare__check">✓</span><span><strong>$1,295 / person</strong> — flat fee, no surprises</span></li>
+              <li class="compare__item"><span class="compare__check">✓</span><span>Weeks, not months or years</span></li>
+              <li class="compare__item"><span class="compare__check">✓</span><span>Confidential sessions — no courtroom hearings</span></li>
+              <li class="compare__item"><span class="compare__check">✓</span><span>You control the outcome</span></li>
+              <li class="compare__item"><span class="compare__check">✓</span><span>Less conflict, better for kids</span></li>
+            </ul>
+          </div>
+          <div class="compare__box">
+            <h3 class="compare__title compare__title--muted">Litigation</h3>
+            <ul class="compare__list">
+              <li class="compare__item compare__item--muted"><span class="compare__x">✗</span><span><strong>$10,000–$30,000+ / person</strong> — hourly billing</span></li>
+              <li class="compare__item compare__item--muted"><span class="compare__x">✗</span><span>6 months to 2+ years in court</span></li>
+              <li class="compare__item compare__item--muted"><span class="compare__x">✗</span><span>Public courtroom hearings and testimony</span></li>
+              <li class="compare__item compare__item--muted"><span class="compare__x">✗</span><span>A judge decides, not you</span></li>
+              <li class="compare__item compare__item--muted"><span class="compare__x">✗</span><span>Adversarial — lasting damage</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ MID-PAGE CTA 1 ═══════════════════════ -->
+    <div class="cta-strip">
+      <button class="btn btn--primary btn--pulse" onclick="openConsult()">
+        See If Mediation Is Right for You
+        <svg class="icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </button>
+      <p class="cta-strip__fine">Free 15-min call &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; No credit card</p>
+    </div>
+
+    <!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
+    <section class="section section--cream" aria-labelledby="reviews-heading">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:2.5rem">
+          <h2 id="reviews-heading" class="section__heading">What clients say</h2>
+          <p class="section__sub">4.9 stars across 271 Google reviews</p>
+        </div>
+        <div class="testimonials">
+          <article class="testimonial">
+            <div class="testimonial__meta">
+              <div class="testimonial__avatar" style="background:#1A73E8;" aria-hidden="true">D</div>
+              <div>
+                <div class="testimonial__name">David H.</div>
+                <div class="testimonial__verified">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="#1A73E8" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  Verified Google Review
+                </div>
+              </div>
+            </div>
+            <div class="testimonial__stars stars" aria-label="5 stars">★★★★★</div>
+            <blockquote class="testimonial__quote">"I was a ball of nerves before our virtual mediation session. Ryan's calmness, casual approach, and insights helped us get through very difficult topics to the point of an agreement. The nerves quickly went away."</blockquote>
+            <div class="testimonial__footer">
+              <span class="testimonial__posted">Posted on Google</span>
+              <svg height="16" viewBox="0 0 272 92" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Google"><path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.86 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#EA4335"/><path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#FBBC05"/><path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="#4285F4"/><path d="M225 3v65h-9.5V3h9.5z" fill="#34A853"/><path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="#EA4335"/><path d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z" fill="#4285F4"/></svg>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <div class="testimonial__meta">
+              <div class="testimonial__avatar" style="background:#34A853;" aria-hidden="true">P</div>
+              <div>
+                <div class="testimonial__name">Philip Goldfinch</div>
+                <div class="testimonial__verified">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="#34A853" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  Verified Google Review
+                </div>
+              </div>
+            </div>
+            <div class="testimonial__stars stars" aria-label="5 stars">★★★★★</div>
+            <blockquote class="testimonial__quote">"We were at a stalemate. Ryan was fantastic — balanced, fair, and helped us reach a resolution that will only strengthen our co-parenting."</blockquote>
+            <div class="testimonial__footer">
+              <span class="testimonial__posted">Posted on Google</span>
+              <svg height="16" viewBox="0 0 272 92" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Google"><path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.86 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#EA4335"/><path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#FBBC05"/><path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="#4285F4"/><path d="M225 3v65h-9.5V3h9.5z" fill="#34A853"/><path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="#EA4335"/><path d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z" fill="#4285F4"/></svg>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <div class="testimonial__meta">
+              <div class="testimonial__avatar" style="background:#EA4335;" aria-hidden="true">L</div>
+              <div>
+                <div class="testimonial__name">Lisa Fox</div>
+                <div class="testimonial__verified">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="#EA4335" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  Verified Google Review
+                </div>
+              </div>
+            </div>
+            <div class="testimonial__stars stars" aria-label="5 stars">★★★★★</div>
+            <blockquote class="testimonial__quote">"We were able to self-file for divorce and avoided lawyers and litigation altogether. Ryan was incredibly responsive, kind, and most importantly — knows his stuff."</blockquote>
+            <div class="testimonial__footer">
+              <span class="testimonial__posted">Posted on Google</span>
+              <svg height="16" viewBox="0 0 272 92" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Google"><path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.86 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#EA4335"/><path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#FBBC05"/><path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="#4285F4"/><path d="M225 3v65h-9.5V3h9.5z" fill="#34A853"/><path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="#EA4335"/><path d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z" fill="#4285F4"/></svg>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ MID-PAGE CTA 2 ═══════════════════════ -->
+    <div class="cta-strip">
+      <button class="btn btn--primary btn--pulse" onclick="openConsult()">
+        See If Mediation Is Right for You
+        <svg class="icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </button>
+      <p class="cta-strip__fine">Free 15-min call &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; No credit card</p>
+    </div>
+
+    <!-- ═══════════════════════ MEET RYAN ═══════════════════════ -->
+    <section class="section section--white" aria-labelledby="ryan-heading">
+      <div class="container--narrow">
+        <div class="text-center" style="margin-bottom:2rem">
+          <h2 id="ryan-heading" class="section__heading">Meet your mediator</h2>
+          <p class="section__sub">The person who'll be facilitating your sessions.</p>
+        </div>
+
+        <!-- Ryan bio -->
+        <div style="display:flex;gap:1.5rem;align-items:flex-start;max-width:640px;margin:0 auto;flex-wrap:wrap;">
+          <img
+            src="https://flannelpeoplemediation.com/images/screenshot-202025-11-14-20at-209.png"
+            alt="Ryan McLaughlin, divorce mediator at Flannel People Mediation"
+            width="120" height="120"
+            loading="lazy"
+            style="width:120px;height:120px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid var(--sage-100);"
+          />
+          <div style="flex:1;min-width:200px;">
+            <h3 class="serif" style="font-size:1.3rem;font-weight:600;margin-bottom:.5rem;">Ryan McLaughlin</h3>
+            <p style="font-size:.85rem;color:var(--sage-600);font-weight:700;margin-bottom:.75rem;font-family:'Lato',sans-serif;">Professional Mediator · Flannel People Mediation</p>
+            <p style="font-size:.9rem;color:var(--text-muted);line-height:1.7;font-family:'Lato',sans-serif;">
+              Ryan trained specifically in conflict resolution and divorce mediation — not litigation. His approach is structured but calm: he keeps sessions moving without taking sides, so both people leave feeling heard. Based in St. Paul, serving clients remotely across the country.
+            </p>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:2rem;">
+          <button class="btn btn--primary" onclick="openConsult()">Book Your Free 15-Min Call</button>
+          <p style="font-size:.82rem;color:var(--text-light);margin-top:.5rem;">No obligation · No credit card</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ FAQ ═══════════════════════ -->
+    <section class="section section--white" aria-labelledby="faq-heading">
+      <div class="container--narrow">
+        <div class="text-center" style="margin-bottom:2.5rem">
+          <h2 id="faq-heading" class="section__heading">Common questions</h2>
+        </div>
+        <div class="faq" role="list">
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              How much does divorce mediation cost?
+              <svg class="faq__chevron icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq__body" role="region">
+              <p class="faq__text">$1,295 per person — flat fee, no hourly billing. Each spouse pays separately. Compare that to divorce attorneys, which typically cost $10,000–$30,000+ per person in contested cases. Mediation is one of the most affordable ways to reach a divorce agreement.</p>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              How does divorce mediation work?
+              <svg class="faq__chevron icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq__body" role="region">
+              <p class="faq__text">A trained mediator meets with both spouses (together, over Zoom) to help you work through decisions on parenting, property, and finances. The mediator doesn't take sides — they guide the conversation so you reach agreements yourselves. Sessions are structured, prepared, and documented. Most couples complete the process in a few sessions.</p>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              Can we do divorce mediation online / remotely?
+              <svg class="faq__chevron icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq__body" role="region">
+              <p class="faq__text">Yes — 100% of our sessions are remote via Zoom. No shared waiting rooms, no commuting, and you can join from wherever you're most comfortable. Online divorce mediation works just as well as in-person and is often easier to schedule.</p>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              Does divorce mediation work if we disagree on everything?
+              <svg class="faq__chevron icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq__body" role="region">
+              <p class="faq__text">That's what mediation is designed for. You don't need to agree on anything before you start — the mediator helps you work through each issue one at a time. Most couples are surprised how much they can resolve when there's a neutral person keeping the conversation productive.</p>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              Is a divorce mediator the same as a divorce attorney?
+              <svg class="faq__chevron icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq__body" role="region">
+              <p class="faq__text">No. A divorce mediator is a neutral third party who helps both spouses reach decisions together — they don't represent either spouse and don't give legal advice. Most couples go through mediation without attorneys on either side. That's often the whole point: working it out together keeps costs down, the timeline short, and the process collaborative instead of adversarial.</p>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              Will a mediation agreement hold up in court?
+              <svg class="faq__chevron icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq__body" role="region">
+              <p class="faq__text">Yes. The goal of mediation is twofold: reaching agreement on every issue, and writing down exactly what you've agreed to. That written record is what you take to the courthouse. Many couples file the paperwork themselves — the process is designed to be accessible. For more complex situations, some choose to have an attorney review things first, but that's the exception, not the rule. Mediation is not legal advice.</p>
+            </div>
+          </div>
+
+          <div class="faq__item" role="listitem">
+            <button class="faq__trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              What if mediation isn't the right fit?
+              <svg class="faq__chevron icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq__body" role="region">
+              <p class="faq__text">The free 15-minute consult is specifically to figure that out. Ryan will honestly tell you whether mediation makes sense for your situation. If it's not the right path, he'll say so — no pressure, no cost.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ FINAL CTA ═══════════════════════ -->
+    <section id="consult" class="section section--dark cta-section" aria-labelledby="cta-heading">
+      <div class="container--narrow">
+        <h2 id="cta-heading" class="cta-section__heading">Start with a free 15-minute call.</h2>
+        <p class="cta-section__body">
+          No obligation. No pressure. Ryan will ask a few questions, you'll ask yours, and you'll leave knowing whether mediation makes sense for your situation.
+        </p>
+        <div style="background:rgba(255,255,255,.1);border-radius:.75rem;padding:1.5rem 2rem;margin-bottom:2rem;text-align:left;max-width:420px;margin-inline:auto;">
+          <p style="font-size:.85rem;color:rgba(255,255,255,.7);margin-bottom:.75rem;font-family:'Lato',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Here's what happens on the call:</p>
+          <ol style="list-style:none;display:flex;flex-direction:column;gap:.6rem;">
+            <li style="display:flex;gap:.75rem;align-items:flex-start;font-family:'Lato',sans-serif;font-size:.95rem;color:rgba(255,255,255,.9);">
+              <span style="background:var(--amber);color:#fff;font-weight:700;font-size:.8rem;width:1.4rem;height:1.4rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem;">1</span>
+              I'll ask about your situation
+            </li>
+            <li style="display:flex;gap:.75rem;align-items:flex-start;font-family:'Lato',sans-serif;font-size:.95rem;color:rgba(255,255,255,.9);">
+              <span style="background:var(--amber);color:#fff;font-weight:700;font-size:.8rem;width:1.4rem;height:1.4rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem;">2</span>
+              I'll tell you honestly if mediation is a good fit
+            </li>
+            <li style="display:flex;gap:.75rem;align-items:flex-start;font-family:'Lato',sans-serif;font-size:.95rem;color:rgba(255,255,255,.9);">
+              <span style="background:var(--amber);color:#fff;font-weight:700;font-size:.8rem;width:1.4rem;height:1.4rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem;">3</span>
+              If it is, I'll explain exactly how it works and how to book
+            </li>
+          </ol>
+          <p style="margin-top:1rem;font-size:.9rem;color:rgba(255,255,255,.8);font-style:italic;font-family:'EB Garamond',serif;">Zero pressure. Just clarity.</p>
+        </div>
+        <button class="btn btn--white" onclick="openConsult()">
+          See If Mediation Is Right for You
+          <svg class="icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </button>
+        <div class="cta-section__secondary">
+          <a href="tel:7633168323" class="cta-section__link">
+            <svg class="icon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 14.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Call (763) 316-8323
+          </a>
+          <span class="cta-section__dot" aria-hidden="true">·</span>
+          <a href="sms:7633168323" class="cta-section__link">
+            <svg class="icon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+            Text (763) 316-8323
+          </a>
+        </div>
+      </div>
+    </section>
+
+  <!-- ═══════════════════════ INLINE CALENDLY ═══════════════════════ -->
+  <section id="calendly-section" class="section section--cream" style="padding-bottom:0;" aria-labelledby="book-heading">
+    <div class="container--narrow" style="text-align:center;">
+      <h2 id="book-heading" class="section__heading">Pick a time that works for you.</h2>
+      <p class="section__sub" style="margin-bottom:1.5rem;">Free 15-minute call. No commitment. See available times below.</p>
+      <div class="calendly-inline-widget"
+        data-url="https://calendly.com/flannelpeoplemediation/free15consult?hide_gdpr_banner=1&primary_color=386548"
+        style="min-width:320px;height:700px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ BOOKING CONFIRMED ═══════════════════════ -->
+  <section id="booking-confirmed" class="section section--cream" style="display:none;padding-top:3rem;padding-bottom:3.5rem;" aria-live="polite">
+    <div class="container--narrow" style="text-align:center;">
+      <div style="font-size:3rem;margin-bottom:1rem;">🗓️</div>
+      <h2 style="font-family:'EB Garamond',Georgia,serif;font-size:2rem;color:var(--text);margin:0 0 .75rem;line-height:1.2;">You're on the calendar.</h2>
+      <p style="font-size:1.05rem;color:var(--text-muted);max-width:480px;margin:0 auto 2rem;line-height:1.65;">
+        A confirmation email is on its way. Ryan will personally reach out before your call — so when you log on, nothing feels cold or unfamiliar.
+      </p>
+      <div style="background:var(--sage-50);border:1px solid var(--sage-100);border-radius:10px;padding:1.5rem 1.75rem;max-width:420px;margin:0 auto 1.75rem;text-align:left;">
+        <p style="font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sage-600);margin:0 0 .9rem;">What happens next</p>
+        <ul style="list-style:none;padding:0;margin:0;font-size:.95rem;color:var(--text-muted);line-height:1.9;">
+          <li><span style="color:var(--sage-500);font-weight:700;margin-right:.4em;">✓</span>Confirmation + Zoom link sent to your inbox</li>
+          <li><span style="color:var(--sage-500);font-weight:700;margin-right:.4em;">✓</span>Ryan reviews your situation before the call</li>
+          <li><span style="color:var(--sage-500);font-weight:700;margin-right:.4em;">✓</span>15 minutes, zero pressure — just a real conversation</li>
+          <li><span style="color:var(--sage-500);font-weight:700;margin-right:.4em;">✓</span>You'll leave knowing exactly whether this fits your situation</li>
+        </ul>
+      </div>
+      <p style="font-size:.875rem;color:var(--text-light);">Questions before your call? Text or call Ryan directly: <a href="tel:7633168323" style="color:var(--sage-600);font-weight:700;">(763) 316-8323</a></p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <p>© 2026 Flannel People Mediation · Ryan McLaughlin, Mediator · St. Paul, MN</p>
+    <p>Mediation is not legal advice. Questions about your legal rights? An attorney can help.</p>
+  </footer>
+
+  <!-- ═══════════════════════ MOBILE STICKY BAR ═══════════════════════ -->
+  <nav class="mobile-bar" aria-label="Quick contact">
+    <a href="tel:7633168323" class="mobile-bar__call" aria-label="Call now">
+      <svg class="icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 14.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      Call Now
+    </a>
+    <button class="mobile-bar__book" onclick="openConsult()" aria-label="Book free consultation">
+      <svg class="icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      Book Free Consult
+    </button>
+  </nav>
+  <div class="mobile-spacer" aria-hidden="true"></div>
+
+  <script>
+    // FAQ accordion
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq__item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq__item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq__trigger').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    // Graceful Calendly fallback (if script hasn't loaded yet)
+    function openConsult() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'consult_click', { event_category: 'engagement', event_label: 'book_cta' });
+      }
+      if (typeof Calendly !== 'undefined') {
+        Calendly.initPopupWidget({ url: 'https://calendly.com/flannelpeoplemediation/free15consult' });
+      } else {
+        window.location.href = 'https://calendly.com/flannelpeoplemediation/free15consult';
+      }
+      return false;
+    }
+  </script>
+
+  <!-- VSL: click to play/pause, resets to thumbnail when done -->
+  <script>
+    (function() {
+      var VSL_URL = 'https://www.flannelpeoplemediation.com/ryan-vsl.mp4';
+      var frame   = document.getElementById('vsl-frame');
+      var video   = document.getElementById('vsl-video');
+      var ctrl    = document.getElementById('vsl-control');
+      if (!frame || !video) return;
+
+      function togglePause() {
+        if (video.paused) {
+          video.play().catch(function() {});
+          frame.classList.remove('paused');
+          if (ctrl) ctrl.setAttribute('aria-label', 'Pause video');
+        } else {
+          video.pause();
+          frame.classList.add('paused');
+          if (ctrl) ctrl.setAttribute('aria-label', 'Play video');
+        }
+      }
+
+      // Fade poster out once video has its first frame
+      video.addEventListener('canplay', function() {
+        frame.classList.add('has-frame');
+      });
+
+      // Reset to thumbnail when video finishes
+      video.addEventListener('ended', function() {
+        frame.classList.remove('has-frame', 'paused');
+        video.src = '';
+      });
+
+      // Click anywhere on the poster (before playing) → start
+      frame.addEventListener('click', function(e) {
+        if (ctrl && ctrl.contains(e.target)) return; // handled by ctrl button
+        if (!frame.classList.contains('has-frame')) {
+          video.src   = VSL_URL;
+          video.muted = false;
+          video.load();
+          video.play().catch(function() {});
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'vsl_play', { event_category: 'engagement', event_label: 'meet_ryan_video' });
+          }
+        }
+      });
+
+      // Control button → pause/resume
+      if (ctrl) ctrl.addEventListener('click', function(e) {
+        e.stopPropagation();
+        togglePause();
+      });
+
+      frame.addEventListener('keydown', function(e) {
+        if (e.key === ' ') { e.preventDefault(); togglePause(); }
+      });
+    })();
+  </script>
+
+</body>
+</html>
